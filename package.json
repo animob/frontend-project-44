@@ -1,0 +1,19 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "hexlet's mind games",
+  "main": "index.js",
+  "scripts": {
+    "test": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/animob/frontend-project-44.git"
+  },
+  "author": "Anna Dubik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/animob/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/animob/frontend-project-44#readme"
+}
