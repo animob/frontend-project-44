@@ -6,6 +6,10 @@
   "scripts": {
     "test": "build"
   },
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/animob/frontend-project-44.git"
