@@ -1,15 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-function greeting() {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-
-  return name;
-}
-
-function evenNumGame() {
+function brainEven(name) {
   let correctAnswers = 0;
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -44,5 +36,4 @@ function evenNumGame() {
   }
 }
 
-const name = greeting();
-evenNumGame(name);
+export default brainEven;
