@@ -7,3 +7,5 @@
 #### Asciinema Link [(brain-even game)](https://asciinema.org/a/1OJ0rFZHC2hlJBrtI9PgE7D3h)
 
 #### Asciinema Link [(brain-calc games)](https://asciinema.org/a/NfDmodroOSz0lsNrldWsBd7Uo)
+
+#### Asciinema Link [(brain-gcd game)](https://asciinema.org/a/k5s3XXMsvyXSr3pjZOWijGExz)
