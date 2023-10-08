@@ -11,3 +11,5 @@
 #### Asciinema Link [(brain-gcd game)](https://asciinema.org/a/k5s3XXMsvyXSr3pjZOWijGExz)
 
 #### Asciinema Link [(brain-progression game)](https://asciinema.org/a/wJHkxwrGDa0o4MakIySGGYUsQ)
+
+#### Asciinema Link [(brain-prime game)](https://asciinema.org/a/66XyKkSV1HdaJjhuvmCRhFzIC)
