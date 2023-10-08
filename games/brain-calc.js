@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import successCondition from '../bin/common.js';
 
 function brainCalc(name) {
   let correctAnswers = 0;
@@ -45,9 +46,7 @@ function brainCalc(name) {
     }
   }
 
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  successCondition(correctAnswers, name);
 }
 
 export default brainCalc;

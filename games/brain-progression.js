@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import successCondition from '../bin/common.js';
 
 function brainProgression(name) {
   let correctAnswers = 0;
@@ -37,9 +38,7 @@ function brainProgression(name) {
     }
   }
 
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  successCondition(correctAnswers, name);
 }
 
 export default brainProgression;
