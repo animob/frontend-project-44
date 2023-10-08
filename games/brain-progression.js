@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition from '../bin/common.js';
+import successCondition, { checkAnswer } from '../bin/common.js';
 
 function brainProgression(name) {
   let correctAnswers = 0;
@@ -13,13 +13,13 @@ function brainProgression(name) {
     const numArrLength = 10;
     const numStart = Math.round(Math.random() * 100);
     const numProgression = Math.round(Math.random() * 10);
-    const numIndexX = Math.round(Math.random() * 10);
+    const numIndexX = Math.round(Math.random() * (numArrLength - 1));
 
     for (let i = 0; i < numArrLength; i += 1) {
       numeros[i] = numStart + numProgression * i;
     }
 
-    const numHiding = numeros[numIndexX];
+    const correctAnswer = numeros[numIndexX];
     numeros[numIndexX] = '..';
 
     const separator = ' ';
@@ -28,12 +28,11 @@ function brainProgression(name) {
     console.log(`Question: ${numerosLine}`);
     const reply = readlineSync.question('Your answer: ');
 
-    if (numHiding === Number(reply)) {
+    checkAnswer(correctAnswer, reply, name, correctAnswers);
+
+    if (correctAnswer === Number(reply)) {
       correctAnswers += 1;
-      console.log('Correct!');
     } else {
-      console.log(`'${reply}' is wrong answer ;(. Correct answer was '${numHiding}'.`);
-      console.log(`Let's try again, ${name}!`);
       break;
     }
   }
