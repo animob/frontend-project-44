@@ -6,4 +6,15 @@ const successCondition = (correctAnswers, name) => {
   }
 };
 
+const checkAnswer = (correctAnswer, reply, name) => {
+  if (correctAnswer === Number(reply)) {
+    console.log('Correct!');
+  } else {
+    console.log(`'${reply}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${name}!`);
+  }
+};
+
+export { checkAnswer };
+
 export default successCondition;

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition from '../bin/common.js';
+import successCondition, { checkAnswer } from '../bin/common.js';
 
 function brainCalc(name) {
   let correctAnswers = 0;
@@ -36,12 +36,11 @@ function brainCalc(name) {
 
     const reply = readlineSync.question('Your answer: ');
 
+    checkAnswer(correctAnswer, reply, name, correctAnswers);
+
     if (correctAnswer === Number(reply)) {
       correctAnswers += 1;
-      console.log('Correct!');
     } else {
-      console.log(`'${reply}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
       break;
     }
   }
