@@ -88,8 +88,21 @@ const commonIsPrimeLogic = (digit) => {
   return correctAnswer;
 };
 
+const createProgression = (numArrLength) => {
+  const numeros = [];
+  const numStart = Math.round(Math.random() * 100);
+  const numProgression = Math.round(Math.random() * 10);
+
+  for (let i = 0; i < numArrLength; i += 1) {
+    numeros.push(numStart + numProgression * i);
+  }
+
+  return numeros;
+};
+
 export {
   checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic, commonIsPrimeLogic,
+  createProgression,
 };
 
 export default successCondition;
