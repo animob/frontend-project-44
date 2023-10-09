@@ -7,7 +7,7 @@ const successCondition = (correctAnswers, name) => {
 };
 
 const checkAnswer = (correctAnswer, reply, name) => {
-  if (correctAnswer === Number(reply)) {
+  if (correctAnswer === Number(reply) || correctAnswer === reply) {
     console.log('Correct!');
   } else {
     console.log(`'${reply}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
@@ -56,6 +56,20 @@ const commonDivisorLogic = (num1, num2) => {
   return result;
 };
 
-export { checkAnswer, mathCalculator, commonDivisorLogic };
+const commonEvenLogic = (num) => {
+  let correctAnswer = '';
+
+  if (num % 2 === 0) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+
+  return correctAnswer;
+};
+
+export {
+  checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic,
+};
 
 export default successCondition;
