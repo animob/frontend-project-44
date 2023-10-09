@@ -42,6 +42,20 @@ const mathCalculator = (num1, num2, name) => {
   return result;
 };
 
-export { checkAnswer, mathCalculator };
+const commonDivisorLogic = (num1, num2) => {
+  let commonDivisor = 1;
+  let result = 1;
+
+  while (commonDivisor <= num1 || commonDivisor <= num2) {
+    if (num1 % commonDivisor === 0 && num2 % commonDivisor === 0) {
+      result = commonDivisor;
+    }
+    commonDivisor += 1;
+  }
+
+  return result;
+};
+
+export { checkAnswer, mathCalculator, commonDivisorLogic };
 
 export default successCondition;
