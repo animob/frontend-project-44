@@ -68,8 +68,28 @@ const commonEvenLogic = (num) => {
   return correctAnswer;
 };
 
+const commonIsPrimeLogic = (digit) => {
+  let isPrime = true;
+  let correctAnswer = '';
+
+  for (let i = 2; i < digit; i += 1) {
+    if (digit % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  if (isPrime) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+
+  return correctAnswer;
+};
+
 export {
-  checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic,
+  checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic, commonIsPrimeLogic,
 };
 
 export default successCondition;

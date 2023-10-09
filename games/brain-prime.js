@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition from '../bin/common.js';
+import successCondition, { commonIsPrimeLogic, checkAnswer } from '../bin/common.js';
 
 function brainPrime(name) {
   let correctAnswers = 0;
@@ -9,31 +9,17 @@ function brainPrime(name) {
 
   while (correctAnswers < 3) {
     const digit = Math.round(Math.random() * 100);
-    let isPrime = true;
-
-    for (let i = 2; i < digit; i += 1) {
-      if (digit % i === 0) {
-        isPrime = false;
-        break;
-      }
-    }
 
     console.log(`Question: ${digit}`);
     const reply = readlineSync.question('Your answer: ');
 
-    if (isPrime === true && reply === 'yes') {
+    const correctAnswer = commonIsPrimeLogic(digit);
+
+    checkAnswer(correctAnswer, reply, name, correctAnswers);
+
+    if (correctAnswer === reply) {
       correctAnswers += 1;
-      console.log('Correct!');
-    } else if (isPrime === false && reply === 'no') {
-      correctAnswers += 1;
-      console.log('Correct!');
-    } else if (isPrime === true && reply === 'no') {
-      console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-      console.log(`Let's try again, ${name}!`);
-      break;
-    } else if (isPrime === false && reply === 'yes') {
-      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-      console.log(`Let's try again, ${name}!`);
+    } else {
       break;
     }
   }
