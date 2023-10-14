@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import greeting from './greeting.js';
+import greet from './greet.js';
 import brainGcd from '../games/brain-gcd.js';
 
-const name = greeting();
+const name = greet();
 brainGcd(name);

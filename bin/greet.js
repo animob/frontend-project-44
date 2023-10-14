@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-function greeting() {
+function greet() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -9,4 +9,4 @@ function greeting() {
   return name;
 }
 
-export default greeting;
+export default greet;
