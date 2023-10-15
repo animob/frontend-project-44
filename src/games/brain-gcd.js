@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getRangeRandomNumber from '../bin/utils.js';
+import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
   greet, writeTask, checkAnswer, commonDivisorLogic,
-} from '../bin/common.js';
+} from '../../bin/common.js';
 
 function brainGcd() {
   const name = greet();

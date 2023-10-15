@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getRangeRandomNumber from '../bin/utils.js';
+import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
   greet, writeTask, checkAnswer, mathCalculator,
-} from '../bin/common.js';
+} from '../../bin/common.js';
 
 function brainCalc() {
   const name = greet();

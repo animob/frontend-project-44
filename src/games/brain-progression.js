@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import successCondition, {
   greet, writeTask, checkAnswer, createProgression,
-} from '../bin/common.js';
+} from '../../bin/common.js';
 
 function brainProgression() {
   const name = greet();
