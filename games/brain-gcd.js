@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import getRangeRandomNumber from '../bin/utils.js';
 import successCondition, { writeTask, checkAnswer, commonDivisorLogic } from '../bin/common.js';
 
 function brainGcd(name) {
@@ -9,8 +10,8 @@ function brainGcd(name) {
 
   while (correctAnswers < 3) {
     // Create two random numbers to find divisor
-    const num1 = Math.round(Math.random() * 100);
-    const num2 = Math.round(Math.random() * 100);
+    const num1 = getRangeRandomNumber(0, 100);
+    const num2 = getRangeRandomNumber(0, 100);
 
     console.log(`Question: ${num1} ${num2}`);
     const reply = readlineSync.question('Your answer: ');

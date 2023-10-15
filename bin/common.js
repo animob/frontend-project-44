@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import getRangeRandomNumber from './utils.js';
+
 const writeTask = (message) => {
   console.log(message);
 };
@@ -94,8 +96,8 @@ const commonIsPrimeLogic = (digit) => {
 
 const createProgression = (numArrLength) => {
   const numeros = [];
-  const numStart = Math.round(Math.random() * 100);
-  const numProgression = Math.round(Math.random() * 10);
+  const numStart = getRangeRandomNumber(0, 100);
+  const numProgression = getRangeRandomNumber(0, 10);
 
   for (let i = 0; i < numArrLength; i += 1) {
     numeros.push(numStart + numProgression * i);

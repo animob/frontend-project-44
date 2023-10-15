@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import getRangeRandomNumber from '../bin/utils.js';
 import successCondition, { writeTask, checkAnswer, mathCalculator } from '../bin/common.js';
 
 function brainCalc(name) {
@@ -9,8 +10,8 @@ function brainCalc(name) {
 
   while (correctAnswers < 3) {
     // Create two random numbers for calculator
-    const num1 = Math.round(Math.random() * 100);
-    const num2 = Math.round(Math.random() * 100);
+    const num1 = getRangeRandomNumber(0, 100);
+    const num2 = getRangeRandomNumber(0, 100);
 
     const correctAnswer = mathCalculator(num1, num2, name);
 
