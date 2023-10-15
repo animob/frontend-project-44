@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition, { writeTask, checkAnswer, createProgression } from '../bin/common.js';
+import successCondition, {
+  greet, writeTask, checkAnswer, createProgression,
+} from '../bin/common.js';
 
-function brainProgression(name) {
+function brainProgression() {
+  const name = greet();
   let correctAnswers = 0;
 
   writeTask('What number is missing in the progression?');

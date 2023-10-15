@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../bin/utils.js';
-import successCondition, { writeTask, commonIsPrimeLogic, checkAnswer } from '../bin/common.js';
+import successCondition, {
+  greet, writeTask, commonIsPrimeLogic, checkAnswer,
+} from '../bin/common.js';
 
-function brainPrime(name) {
+function brainPrime() {
+  const name = greet();
   let correctAnswers = 0;
 
   writeTask('Answer "yes" if given number is prime. Otherwise answer "no".');

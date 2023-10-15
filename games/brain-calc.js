@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../bin/utils.js';
-import successCondition, { writeTask, checkAnswer, mathCalculator } from '../bin/common.js';
+import successCondition, {
+  greet, writeTask, checkAnswer, mathCalculator,
+} from '../bin/common.js';
 
-function brainCalc(name) {
+function brainCalc() {
+  const name = greet();
   let correctAnswers = 0;
 
   writeTask('What is the result of the expression?');

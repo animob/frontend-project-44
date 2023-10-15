@@ -1,6 +1,14 @@
 #!/usr/bin/env node
-
+import readlineSync from 'readline-sync';
 import getRangeRandomNumber from './utils.js';
+
+const greet = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+
+  return name;
+};
 
 const writeTask = (message) => {
   console.log(message);
@@ -107,8 +115,8 @@ const createProgression = (numArrLength) => {
 };
 
 export {
-  writeTask, checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic, commonIsPrimeLogic,
-  createProgression,
+  greet, writeTask, checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic,
+  commonIsPrimeLogic, createProgression,
 };
 
 export default successCondition;
