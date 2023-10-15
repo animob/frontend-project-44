@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition, { commonEvenLogic, checkAnswer } from '../bin/common.js';
+import successCondition, { writeTask, commonEvenLogic, checkAnswer } from '../bin/common.js';
 
 function brainEven(name) {
   let correctAnswers = 0;
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  writeTask('Answer "yes" if the number is even, otherwise answer "no".');
 
   while (correctAnswers < 3) {
     const num = Math.round(Math.random() * 100);

@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+const writeTask = (message) => {
+  console.log(message);
+};
+
 const successCondition = (correctAnswers, name) => {
   if (correctAnswers === 3) {
     console.log(`Congratulations, ${name}!`);
@@ -101,7 +105,7 @@ const createProgression = (numArrLength) => {
 };
 
 export {
-  checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic, commonIsPrimeLogic,
+  writeTask, checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic, commonIsPrimeLogic,
   createProgression,
 };
 

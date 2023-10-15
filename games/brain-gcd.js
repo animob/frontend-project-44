@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition, { checkAnswer, commonDivisorLogic } from '../bin/common.js';
+import successCondition, { writeTask, checkAnswer, commonDivisorLogic } from '../bin/common.js';
 
 function brainGcd(name) {
   let correctAnswers = 0;
 
-  console.log('Find the greatest common divisor of given numbers.');
+  writeTask('Find the greatest common divisor of given numbers.');
 
   while (correctAnswers < 3) {
     // Create two random numbers to find divisor

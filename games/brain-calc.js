@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition, { checkAnswer, mathCalculator } from '../bin/common.js';
+import successCondition, { writeTask, checkAnswer, mathCalculator } from '../bin/common.js';
 
 function brainCalc(name) {
   let correctAnswers = 0;
 
-  console.log('What is the result of the expression?');
+  writeTask('What is the result of the expression?');
 
   while (correctAnswers < 3) {
     // Create two random numbers for calculator

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import successCondition, { commonIsPrimeLogic, checkAnswer } from '../bin/common.js';
+import successCondition, { writeTask, commonIsPrimeLogic, checkAnswer } from '../bin/common.js';
 
 function brainPrime(name) {
   let correctAnswers = 0;
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  writeTask('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   while (correctAnswers < 3) {
     const digit = Math.round(Math.random() * 100);
