@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, checkAnswer, commonDivisorLogic,
+  greet, writeTask, getReply, checkAnswer, commonDivisorLogic,
 } from '../../bin/common.js';
 
 function brainGcd() {
@@ -17,10 +16,9 @@ function brainGcd() {
     const num2 = getRangeRandomNumber(0, 100);
 
     console.log(`Question: ${num1} ${num2}`);
-    const reply = readlineSync.question('Your answer: ');
 
     const correctAnswer = commonDivisorLogic(num1, num2);
-
+    const reply = getReply();
     checkAnswer(correctAnswer, reply, name, correctAnswers);
 
     if (correctAnswer === Number(reply)) {

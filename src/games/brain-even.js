@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, commonEvenLogic, checkAnswer,
+  greet, writeTask, getReply, commonEvenLogic, checkAnswer,
 } from '../../bin/common.js';
 
 function brainEven() {
@@ -14,10 +13,9 @@ function brainEven() {
   while (correctAnswers < 3) {
     const num = getRangeRandomNumber(0, 100);
     console.log(`Question: ${num}`);
-    const reply = readlineSync.question('Your answer: ');
 
     const correctAnswer = commonEvenLogic(num, correctAnswers);
-
+    const reply = getReply();
     checkAnswer(correctAnswer, reply, name, correctAnswers);
 
     if (correctAnswer === reply) {

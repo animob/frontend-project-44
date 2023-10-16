@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, { greet, writeTask, checkAnswer } from '../../bin/common.js';
+import successCondition, {
+  greet, writeTask, getReply, checkAnswer,
+} from '../../bin/common.js';
 
 const mathCalculator = (num1, num2, name) => {
   // Create random sign for calculator
@@ -42,9 +43,7 @@ function brainCalc() {
     const num2 = getRangeRandomNumber(0, 100);
 
     const correctAnswer = mathCalculator(num1, num2, name);
-
-    const reply = readlineSync.question('Your answer: ');
-
+    const reply = getReply();
     checkAnswer(correctAnswer, reply, name, correctAnswers);
 
     if (correctAnswer === Number(reply)) {

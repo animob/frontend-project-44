@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, commonIsPrimeLogic, checkAnswer,
+  greet, writeTask, getReply, commonIsPrimeLogic, checkAnswer,
 } from '../../bin/common.js';
 
 function brainPrime() {
@@ -15,10 +14,9 @@ function brainPrime() {
     const digit = getRangeRandomNumber(0, 100);
 
     console.log(`Question: ${digit}`);
-    const reply = readlineSync.question('Your answer: ');
 
     const correctAnswer = commonIsPrimeLogic(digit);
-
+    const reply = getReply();
     checkAnswer(correctAnswer, reply, name, correctAnswers);
 
     if (correctAnswer === reply) {

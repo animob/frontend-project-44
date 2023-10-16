@@ -14,6 +14,8 @@ const writeTask = (message) => {
   console.log(message);
 };
 
+const getReply = () => readlineSync.question('Your answer: ');
+
 const successCondition = (correctAnswers, name) => {
   if (correctAnswers === 3) {
     console.log(`Congratulations, ${name}!`);
@@ -88,7 +90,7 @@ const createProgression = (numArrLength) => {
 };
 
 export {
-  greet, writeTask, checkAnswer, commonDivisorLogic, commonEvenLogic,
+  greet, writeTask, getReply, checkAnswer, commonDivisorLogic, commonEvenLogic,
   commonIsPrimeLogic, createProgression,
 };
 

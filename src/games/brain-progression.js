@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import successCondition, {
-  greet, writeTask, checkAnswer, createProgression,
+  greet, writeTask, getReply, checkAnswer, createProgression,
 } from '../../bin/common.js';
 
 function brainProgression() {
@@ -22,8 +21,8 @@ function brainProgression() {
     const numerosLine = numerosArr.join(separator);
 
     console.log(`Question: ${numerosLine}`);
-    const reply = readlineSync.question('Your answer: ');
 
+    const reply = getReply();
     checkAnswer(correctAnswer, reply, name);
 
     if (correctAnswer === Number(reply)) {
