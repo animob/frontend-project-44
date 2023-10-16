@@ -1,9 +1,34 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, {
-  greet, writeTask, checkAnswer, mathCalculator,
-} from '../../bin/common.js';
+import successCondition, { greet, writeTask, checkAnswer } from '../../bin/common.js';
+
+const mathCalculator = (num1, num2, name) => {
+  // Create random sign for calculator
+  const signs = ['+', '-', '*'];
+  const randomIndex = Math.round(Math.random() * (signs.length - 1));
+  const randomSign = signs[randomIndex];
+  let result = 0;
+
+  switch (randomSign) {
+    case '+':
+      console.log(`Question: ${num1} + ${num2}`);
+      result = num1 + num2;
+      break;
+    case '-':
+      console.log(`Question: ${num1} - ${num2}`);
+      result = num1 - num2;
+      break;
+    case '*':
+      console.log(`Question: ${num1} * ${num2}`);
+      result = num1 * num2;
+      break;
+    default:
+      console.log(`Let's try again, ${name}!`);
+  }
+
+  return result;
+};
 
 function brainCalc() {
   const name = greet();

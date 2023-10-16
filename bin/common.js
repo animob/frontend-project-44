@@ -29,33 +29,6 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
-const mathCalculator = (num1, num2, name) => {
-  // Create random sign for calculator
-  const signs = ['+', '-', '*'];
-  const randomIndex = Math.round(Math.random() * (signs.length - 1));
-  const randomSign = signs[randomIndex];
-  let result = 0;
-
-  switch (randomSign) {
-    case '+':
-      console.log(`Question: ${num1} + ${num2}`);
-      result = num1 + num2;
-      break;
-    case '-':
-      console.log(`Question: ${num1} - ${num2}`);
-      result = num1 - num2;
-      break;
-    case '*':
-      console.log(`Question: ${num1} * ${num2}`);
-      result = num1 * num2;
-      break;
-    default:
-      console.log(`Let's try again, ${name}!`);
-  }
-
-  return result;
-};
-
 const commonDivisorLogic = (num1, num2) => {
   let commonDivisor = 1;
   let result = 1;
@@ -115,7 +88,7 @@ const createProgression = (numArrLength) => {
 };
 
 export {
-  greet, writeTask, checkAnswer, mathCalculator, commonDivisorLogic, commonEvenLogic,
+  greet, writeTask, checkAnswer, commonDivisorLogic, commonEvenLogic,
   commonIsPrimeLogic, createProgression,
 };
 
