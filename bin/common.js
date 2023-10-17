@@ -31,26 +31,6 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
-const commonIsPrimeLogic = (digit) => {
-  let isPrime = true;
-  let correctAnswer = '';
-
-  for (let i = 2; i < digit; i += 1) {
-    if (digit % i === 0) {
-      isPrime = false;
-      break;
-    }
-  }
-
-  if (isPrime) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-
-  return correctAnswer;
-};
-
 const createProgression = (numArrLength) => {
   const numeros = [];
   const numStart = getRangeRandomNumber(0, 100);
@@ -65,7 +45,7 @@ const createProgression = (numArrLength) => {
 
 export {
   greet, writeTask, getReply, checkAnswer,
-  commonIsPrimeLogic, createProgression,
+  createProgression,
 };
 
 export default successCondition;

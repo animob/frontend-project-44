@@ -1,8 +1,28 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, getReply, commonIsPrimeLogic, checkAnswer,
+  greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
+
+const commonIsPrimeLogic = (digit) => {
+  let isPrime = true;
+  let correctAnswer = '';
+
+  for (let i = 2; i < digit; i += 1) {
+    if (digit % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  if (isPrime) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+
+  return correctAnswer;
+};
 
 function brainPrime() {
   const name = greet();
