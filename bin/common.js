@@ -31,20 +31,6 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
-const commonDivisorLogic = (num1, num2) => {
-  let commonDivisor = 1;
-  let result = 1;
-
-  while (commonDivisor <= num1 || commonDivisor <= num2) {
-    if (num1 % commonDivisor === 0 && num2 % commonDivisor === 0) {
-      result = commonDivisor;
-    }
-    commonDivisor += 1;
-  }
-
-  return result;
-};
-
 const commonEvenLogic = (num) => {
   let correctAnswer = '';
 
@@ -90,7 +76,7 @@ const createProgression = (numArrLength) => {
 };
 
 export {
-  greet, writeTask, getReply, checkAnswer, commonDivisorLogic, commonEvenLogic,
+  greet, writeTask, getReply, checkAnswer, commonEvenLogic,
   commonIsPrimeLogic, createProgression,
 };
 

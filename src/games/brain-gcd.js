@@ -1,8 +1,22 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, getReply, checkAnswer, commonDivisorLogic,
+  greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
+
+const commonDivisorLogic = (num1, num2) => {
+  let commonDivisor = 1;
+  let result = 1;
+
+  while (commonDivisor <= num1 || commonDivisor <= num2) {
+    if (num1 % commonDivisor === 0 && num2 % commonDivisor === 0) {
+      result = commonDivisor;
+    }
+    commonDivisor += 1;
+  }
+
+  return result;
+};
 
 function brainGcd() {
   const name = greet();
