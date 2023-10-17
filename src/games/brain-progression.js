@@ -1,7 +1,20 @@
 #!/usr/bin/env node
+import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, getReply, checkAnswer, createProgression,
+  greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
+
+const createProgression = (numArrLength) => {
+  const numeros = [];
+  const numStart = getRangeRandomNumber(0, 100);
+  const numProgression = getRangeRandomNumber(0, 10);
+
+  for (let i = 0; i < numArrLength; i += 1) {
+    numeros.push(numStart + numProgression * i);
+  }
+
+  return numeros;
+};
 
 function brainProgression() {
   const name = greet();

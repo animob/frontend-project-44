@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getRangeRandomNumber from './utils.js';
 
 const greet = () => {
   console.log('Welcome to the Brain Games!');
@@ -31,21 +30,8 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
-const createProgression = (numArrLength) => {
-  const numeros = [];
-  const numStart = getRangeRandomNumber(0, 100);
-  const numProgression = getRangeRandomNumber(0, 10);
-
-  for (let i = 0; i < numArrLength; i += 1) {
-    numeros.push(numStart + numProgression * i);
-  }
-
-  return numeros;
-};
-
 export {
   greet, writeTask, getReply, checkAnswer,
-  createProgression,
 };
 
 export default successCondition;
