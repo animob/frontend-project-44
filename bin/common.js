@@ -31,18 +31,6 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
-const commonEvenLogic = (num) => {
-  let correctAnswer = '';
-
-  if (num % 2 === 0) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-
-  return correctAnswer;
-};
-
 const commonIsPrimeLogic = (digit) => {
   let isPrime = true;
   let correctAnswer = '';
@@ -76,7 +64,7 @@ const createProgression = (numArrLength) => {
 };
 
 export {
-  greet, writeTask, getReply, checkAnswer, commonEvenLogic,
+  greet, writeTask, getReply, checkAnswer,
   commonIsPrimeLogic, createProgression,
 };
 

@@ -1,8 +1,20 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
 import successCondition, {
-  greet, writeTask, getReply, commonEvenLogic, checkAnswer,
+  greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
+
+const commonEvenLogic = (num) => {
+  let correctAnswer = '';
+
+  if (num % 2 === 0) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+
+  return correctAnswer;
+};
 
 function brainEven() {
   const name = greet();
