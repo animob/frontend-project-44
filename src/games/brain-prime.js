@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, {
+import finishTask, {
   greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
 
@@ -24,7 +24,7 @@ const commonIsPrimeLogic = (digit) => {
   return correctAnswer;
 };
 
-function brainPrime() {
+function runBrainPrime() {
   const name = greet();
   let correctAnswers = 0;
 
@@ -46,7 +46,7 @@ function brainPrime() {
     }
   }
 
-  successCondition(correctAnswers, name);
+  finishTask(correctAnswers, name);
 }
 
-export default brainPrime;
+export default runBrainPrime;

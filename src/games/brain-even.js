@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, {
+import finishTask, {
   greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
 
@@ -16,7 +16,7 @@ const commonEvenLogic = (num) => {
   return correctAnswer;
 };
 
-function brainEven() {
+function runBrainEven() {
   const name = greet();
   let correctAnswers = 0;
 
@@ -37,7 +37,7 @@ function brainEven() {
     }
   }
 
-  successCondition(correctAnswers, name);
+  finishTask(correctAnswers, name);
 }
 
-export default brainEven;
+export default runBrainEven;

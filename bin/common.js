@@ -15,7 +15,7 @@ const writeTask = (message) => {
 
 const getReply = () => readlineSync.question('Your answer: ');
 
-const successCondition = (correctAnswers, name) => {
+const finishTask = (correctAnswers, name) => {
   if (correctAnswers === 3) {
     console.log(`Congratulations, ${name}!`);
   }
@@ -34,4 +34,4 @@ export {
   greet, writeTask, getReply, checkAnswer,
 };
 
-export default successCondition;
+export default finishTask;

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, {
+import finishTask, {
   greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
 
@@ -16,7 +16,7 @@ const createProgression = (numArrLength) => {
   return numeros;
 };
 
-function brainProgression() {
+function runBrainProgression() {
   const name = greet();
   let correctAnswers = 0;
 
@@ -45,7 +45,7 @@ function brainProgression() {
     }
   }
 
-  successCondition(correctAnswers, name);
+  finishTask(correctAnswers, name);
 }
 
-export default brainProgression;
+export default runBrainProgression;

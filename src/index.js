@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-import brainEven from './games/brain-even.js';
-import brainCalc from './games/brain-calc.js';
-import brainGcd from './games/brain-gcd.js';
-import brainProgression from './games/brain-progression.js';
-import brainPrime from './games/brain-prime.js';
+import runBrainEven from './games/brain-even.js';
+import runBrainCalc from './games/brain-calc.js';
+import runBrainGcd from './games/brain-gcd.js';
+import runBrainProgression from './games/brain-progression.js';
+import runBrainPrime from './games/brain-prime.js';
 
-brainEven();
-brainCalc();
-brainGcd();
-brainProgression();
-brainPrime();
+runBrainEven();
+runBrainCalc();
+runBrainGcd();
+runBrainProgression();
+runBrainPrime();

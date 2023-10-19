@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, {
+import finishTask, {
   greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
 
@@ -18,7 +18,7 @@ const commonDivisorLogic = (num1, num2) => {
   return result;
 };
 
-function brainGcd() {
+function runBrainGcd() {
   const name = greet();
   let correctAnswers = 0;
 
@@ -42,7 +42,7 @@ function brainGcd() {
     }
   }
 
-  successCondition(correctAnswers, name);
+  finishTask(correctAnswers, name);
 }
 
-export default brainGcd;
+export default runBrainGcd;

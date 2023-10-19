@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../../bin/utils.js';
-import successCondition, {
+import finishTask, {
   greet, writeTask, getReply, checkAnswer,
 } from '../../bin/common.js';
 
@@ -31,7 +31,7 @@ const mathCalculator = (num1, num2, name) => {
   return result;
 };
 
-function brainCalc() {
+function runBrainCalc() {
   const name = greet();
   let correctAnswers = 0;
 
@@ -53,7 +53,7 @@ function brainCalc() {
     }
   }
 
-  successCondition(correctAnswers, name);
+  finishTask(correctAnswers, name);
 }
 
-export default brainCalc;
+export default runBrainCalc;
