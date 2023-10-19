@@ -5,8 +5,12 @@ import runBrainGcd from './games/brain-gcd.js';
 import runBrainProgression from './games/brain-progression.js';
 import runBrainPrime from './games/brain-prime.js';
 
-runBrainEven();
-runBrainCalc();
-runBrainGcd();
-runBrainProgression();
-runBrainPrime();
+const run = () => {
+  runBrainEven();
+  runBrainCalc();
+  runBrainGcd();
+  runBrainProgression();
+  runBrainPrime();
+};
+
+run();
