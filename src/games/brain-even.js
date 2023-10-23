@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-import getRangeRandomNumber from '../../bin/utils.js';
-import finishTask, {
-  greet, writeTask, getReply, checkAnswer,
-} from '../../bin/common.js';
+import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
+import runGame from '../../bin/common.js';
 
 const commonEvenLogic = (num) => {
   let correctAnswer = '';
@@ -17,27 +15,16 @@ const commonEvenLogic = (num) => {
 };
 
 function runBrainEven() {
-  const name = greet();
-  let correctAnswers = 0;
-
-  writeTask('Answer "yes" if the number is even, otherwise answer "no".');
-
-  while (correctAnswers < 3) {
-    const num = getRangeRandomNumber(0, 100);
-    console.log(`Question: ${num}`);
-
-    const correctAnswer = commonEvenLogic(num, correctAnswers);
-    const reply = getReply();
-    checkAnswer(correctAnswer, reply, name, correctAnswers);
-
-    if (correctAnswer === reply) {
-      correctAnswers += 1;
-    } else {
-      break;
-    }
+  const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const questionArr = [];
+  const correctAnswerArr = [];
+  for (let i = 0; i < roundsCount; i += 1) {
+    questionArr.push(getRangeRandomNumber(0, 100));
+    const result = commonEvenLogic(questionArr[i]);
+    correctAnswerArr.push(result);
   }
 
-  finishTask(correctAnswers, name);
+  runGame(textTask, questionArr, correctAnswerArr);
 }
 
 export default runBrainEven;
