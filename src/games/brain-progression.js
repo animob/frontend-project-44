@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-import getRangeRandomNumber from '../../bin/utils.js';
-import finishTask, {
-  greet, writeTask, getReply, checkAnswer,
-} from '../../bin/common.js';
+import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
+import runGame from '../../bin/common.js';
 
 const createProgression = (numArrLength) => {
   const numeros = [];
@@ -17,12 +15,11 @@ const createProgression = (numArrLength) => {
 };
 
 function runBrainProgression() {
-  const name = greet();
-  let correctAnswers = 0;
+  const textTask = 'What number is missing in the progression?';
+  const questionArr = [];
+  const correctAnswerArr = [];
 
-  writeTask('What number is missing in the progression?');
-
-  while (correctAnswers < 3) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const numArrLength = 10;
     const numIndexX = Math.round(Math.random() * (numArrLength - 1));
 
@@ -33,19 +30,11 @@ function runBrainProgression() {
     const separator = ' ';
     const numerosLine = numerosArr.join(separator);
 
-    console.log(`Question: ${numerosLine}`);
-
-    const reply = getReply();
-    checkAnswer(correctAnswer, reply, name);
-
-    if (correctAnswer === Number(reply)) {
-      correctAnswers += 1;
-    } else {
-      break;
-    }
+    questionArr.push(numerosLine);
+    correctAnswerArr.push(correctAnswer);
   }
 
-  finishTask(correctAnswers, name);
+  runGame(textTask, questionArr, correctAnswerArr);
 }
 
 export default runBrainProgression;
