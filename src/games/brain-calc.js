@@ -24,8 +24,7 @@ const mathCalculator = (num1, num2, randomSign, name) => {
 
 function runBrainCalc() {
   const textTask = 'What is the result of the expression?';
-  const questionArr = [];
-  const correctAnswerArr = [];
+  const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {
     const num1 = getRangeRandomNumber(0, 100);
@@ -36,12 +35,12 @@ function runBrainCalc() {
     const randomIndex = Math.round(Math.random() * (signs.length - 1));
     const randomSign = signs[randomIndex];
 
-    questionArr.push(`${num1} ${randomSign} ${num2}`);
+    questionAnswerArr[0].push(`${num1} ${randomSign} ${num2}`);
     const correctAnswer = mathCalculator(num1, num2, randomSign);
-    correctAnswerArr.push(correctAnswer);
+    questionAnswerArr[1].push(correctAnswer);
   }
 
-  runGame(textTask, questionArr, correctAnswerArr);
+  runGame(textTask, questionAnswerArr);
 }
 
 export default runBrainCalc;

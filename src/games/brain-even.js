@@ -16,15 +16,15 @@ const commonEvenLogic = (num) => {
 
 function runBrainEven() {
   const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const questionArr = [];
-  const correctAnswerArr = [];
+  const questionAnswerArr = [[], []];
+
   for (let i = 0; i < roundsCount; i += 1) {
-    questionArr.push(getRangeRandomNumber(0, 100));
-    const result = commonEvenLogic(questionArr[i]);
-    correctAnswerArr.push(result);
+    questionAnswerArr[0].push(getRangeRandomNumber(0, 100));
+    const result = commonEvenLogic(questionAnswerArr[0][i]);
+    questionAnswerArr[1].push(result);
   }
 
-  runGame(textTask, questionArr, correctAnswerArr);
+  runGame(textTask, questionAnswerArr);
 }
 
 export default runBrainEven;

@@ -24,16 +24,15 @@ const commonIsPrimeLogic = (num) => {
 
 function runBrainPrime() {
   const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const questionArr = [];
-  const correctAnswerArr = [];
+  const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {
-    questionArr.push(getRangeRandomNumber(0, 100));
-    const result = commonIsPrimeLogic(questionArr[i]);
-    correctAnswerArr.push(result);
+    questionAnswerArr[0].push(getRangeRandomNumber(0, 100));
+    const result = commonIsPrimeLogic(questionAnswerArr[0][i]);
+    questionAnswerArr[1].push(result);
   }
 
-  runGame(textTask, questionArr, correctAnswerArr);
+  runGame(textTask, questionAnswerArr);
 }
 
 export default runBrainPrime;

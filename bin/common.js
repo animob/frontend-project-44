@@ -32,15 +32,14 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
-const runGame = (textTask, questionArr, correctAnswerArr) => {
+const runGame = (textTask, questionAnswerArr) => {
   const name = greet();
   writeTask(textTask);
   let correctAnswers = 0;
   let i = 0;
   while (correctAnswers < roundsCount && i < roundsCount) {
-    const question = questionArr[i];
-    console.log(`Question: ${question}`);
-    const correctAnswer = correctAnswerArr[i];
+    console.log(`Question: ${questionAnswerArr[0][i]}`);
+    const correctAnswer = questionAnswerArr[1][i];
     const reply = getReply();
     checkAnswer(correctAnswer, reply, name, correctAnswers);
     if (String(correctAnswer) === String(reply)) {

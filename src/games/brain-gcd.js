@@ -18,20 +18,19 @@ const commonDivisorLogic = (num1, num2) => {
 
 function runBrainGcd() {
   const textTask = 'Find the greatest common divisor of given numbers.';
-  const questionArr = [];
-  const correctAnswerArr = [];
+  const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {
     // Create two random numbers to find divisor
     const num1 = getRangeRandomNumber(0, 100);
     const num2 = getRangeRandomNumber(0, 100);
 
-    questionArr.push(`${num1} ${num2}`);
+    questionAnswerArr[0].push(`${num1} ${num2}`);
     const correctAnswer = commonDivisorLogic(num1, num2);
-    correctAnswerArr.push(correctAnswer);
+    questionAnswerArr[1].push(correctAnswer);
   }
 
-  runGame(textTask, questionArr, correctAnswerArr);
+  runGame(textTask, questionAnswerArr);
 }
 
 export default runBrainGcd;

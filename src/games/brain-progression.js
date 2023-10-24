@@ -16,8 +16,7 @@ const createProgression = (numArrLength) => {
 
 function runBrainProgression() {
   const textTask = 'What number is missing in the progression?';
-  const questionArr = [];
-  const correctAnswerArr = [];
+  const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {
     const numArrLength = 10;
@@ -30,11 +29,11 @@ function runBrainProgression() {
     const separator = ' ';
     const numerosLine = numerosArr.join(separator);
 
-    questionArr.push(numerosLine);
-    correctAnswerArr.push(correctAnswer);
+    questionAnswerArr[0].push(numerosLine);
+    questionAnswerArr[1].push(correctAnswer);
   }
 
-  runGame(textTask, questionArr, correctAnswerArr);
+  runGame(textTask, questionAnswerArr);
 }
 
 export default runBrainProgression;
