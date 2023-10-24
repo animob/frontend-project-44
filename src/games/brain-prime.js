@@ -1,15 +1,13 @@
 #!/usr/bin/env node
-import getRangeRandomNumber from '../../bin/utils.js';
-import finishTask, {
-  greet, writeTask, getReply, checkAnswer,
-} from '../../bin/common.js';
+import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
+import runGame from '../../bin/common.js';
 
-const commonIsPrimeLogic = (digit) => {
+const commonIsPrimeLogic = (num) => {
   let isPrime = true;
   let correctAnswer = '';
 
-  for (let i = 2; i < digit; i += 1) {
-    if (digit % i === 0) {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
       isPrime = false;
       break;
     }
@@ -25,28 +23,17 @@ const commonIsPrimeLogic = (digit) => {
 };
 
 function runBrainPrime() {
-  const name = greet();
-  let correctAnswers = 0;
+  const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const questionArr = [];
+  const correctAnswerArr = [];
 
-  writeTask('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  while (correctAnswers < 3) {
-    const digit = getRangeRandomNumber(0, 100);
-
-    console.log(`Question: ${digit}`);
-
-    const correctAnswer = commonIsPrimeLogic(digit);
-    const reply = getReply();
-    checkAnswer(correctAnswer, reply, name, correctAnswers);
-
-    if (correctAnswer === reply) {
-      correctAnswers += 1;
-    } else {
-      break;
-    }
+  for (let i = 0; i < roundsCount; i += 1) {
+    questionArr.push(getRangeRandomNumber(0, 100));
+    const result = commonIsPrimeLogic(questionArr[i]);
+    correctAnswerArr.push(result);
   }
 
-  finishTask(correctAnswers, name);
+  runGame(textTask, questionArr, correctAnswerArr);
 }
 
 export default runBrainPrime;
