@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
-import runGame from '../../bin/common.js';
+import runGame, { analyzeOneNumber } from '../../bin/common.js';
 
 const commonEvenLogic = (num) => {
   let correctAnswer = '';
@@ -16,13 +15,8 @@ const commonEvenLogic = (num) => {
 
 function runBrainEven() {
   const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const questionAnswerArr = [[], []];
 
-  for (let i = 0; i < roundsCount; i += 1) {
-    questionAnswerArr[0].push(getRangeRandomNumber(0, 100));
-    const result = commonEvenLogic(questionAnswerArr[0][i]);
-    questionAnswerArr[1].push(result);
-  }
+  const questionAnswerArr = analyzeOneNumber(commonEvenLogic);
 
   runGame(textTask, questionAnswerArr);
 }

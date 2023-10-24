@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-import { roundsCount } from './utils.js';
+import getRangeRandomNumber, { roundsCount } from './utils.js';
 
 const greet = () => {
   console.log('Welcome to the Brain Games!');
@@ -32,6 +32,18 @@ const checkAnswer = (correctAnswer, reply, name) => {
   }
 };
 
+const analyzeOneNumber = (func) => {
+  const questionAnswerArr = [[], []];
+
+  for (let i = 0; i < roundsCount; i += 1) {
+    questionAnswerArr[0].push(getRangeRandomNumber(0, 100));
+    const result = func(questionAnswerArr[0][i]);
+    questionAnswerArr[1].push(result);
+  }
+
+  return questionAnswerArr;
+};
+
 const runGame = (textTask, questionAnswerArr) => {
   const name = greet();
   writeTask(textTask);
@@ -54,7 +66,7 @@ const runGame = (textTask, questionAnswerArr) => {
 };
 
 export {
-  greet, writeTask, getReply, checkAnswer, finishTask,
+  greet, writeTask, getReply, checkAnswer, finishTask, analyzeOneNumber,
 };
 
 export default runGame;
