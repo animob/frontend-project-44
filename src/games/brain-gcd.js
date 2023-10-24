@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-import getRangeRandomNumber from '../../bin/utils.js';
-import finishTask, {
-  greet, writeTask, getReply, checkAnswer,
-} from '../../bin/common.js';
+import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
+import runGame from '../../bin/common.js';
 
 const commonDivisorLogic = (num1, num2) => {
   let commonDivisor = 1;
@@ -19,30 +17,21 @@ const commonDivisorLogic = (num1, num2) => {
 };
 
 function runBrainGcd() {
-  const name = greet();
-  let correctAnswers = 0;
+  const textTask = 'Find the greatest common divisor of given numbers.';
+  const questionArr = [];
+  const correctAnswerArr = [];
 
-  writeTask('Find the greatest common divisor of given numbers.');
-
-  while (correctAnswers < 3) {
+  for (let i = 0; i < roundsCount; i += 1) {
     // Create two random numbers to find divisor
     const num1 = getRangeRandomNumber(0, 100);
     const num2 = getRangeRandomNumber(0, 100);
 
-    console.log(`Question: ${num1} ${num2}`);
-
+    questionArr.push(`${num1} ${num2}`);
     const correctAnswer = commonDivisorLogic(num1, num2);
-    const reply = getReply();
-    checkAnswer(correctAnswer, reply, name, correctAnswers);
-
-    if (correctAnswer === Number(reply)) {
-      correctAnswers += 1;
-    } else {
-      break;
-    }
+    correctAnswerArr.push(correctAnswer);
   }
 
-  finishTask(correctAnswers, name);
+  runGame(textTask, questionArr, correctAnswerArr);
 }
 
 export default runBrainGcd;
