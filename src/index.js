@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import runBrainEven from './games/brain-even.js';
-import runBrainCalc from './games/brain-calc.js';
-import runBrainGcd from './games/brain-gcd.js';
-import runBrainProgression from './games/brain-progression.js';
-import runBrainPrime from './games/brain-prime.js';
+import runBrainEven from './games/runEven.js';
+import runBrainCalc from './games/runCalc.js';
+import runBrainGcd from './games/runGcd.js';
+import runBrainProgression from './games/runProgression.js';
+import runBrainPrime from './games/runPrime.js';
 
 const run = () => {
   runBrainEven();
