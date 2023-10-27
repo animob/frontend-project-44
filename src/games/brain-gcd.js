@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
-import runGame from '../../bin/common.js';
+import runGame from '../common.js';
 
 const commonDivisorLogic = (num1, num2) => {
   let commonDivisor = 1;

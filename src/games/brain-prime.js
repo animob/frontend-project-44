@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import runGame, { analyzeOneNumber } from '../../bin/common.js';
+import runGame, { analyzeOneNumber } from '../common.js';
 
 const commonIsPrimeLogic = (num) => {
   let isPrime = true;
