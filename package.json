@@ -8,12 +8,12 @@
   },
   "type": "module",
   "bin": {
-    "brain-games": "bin/runGames.js",
-    "brain-even": "bin/runEven.js",
-    "brain-calc": "bin/runCalc.js",
-    "brain-gcd": "bin/runGcd.js",
-    "brain-progression": "bin/runProgression.js",
-    "brain-prime": "bin/runPrime.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
   },
   "repository": {
     "type": "git",

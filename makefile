@@ -4,22 +4,22 @@ install:
 		npm ci
 
 brain-games:
-		node bin/runGames.js
+		node bin/brain-games.js
 
 brain-even:
-		node bin/runEven.js
+		node bin/brain-even.js
 
 brain-calc:
-		node bin/runCalc.js
+		node bin/brain-calc.js
 
 brain-gcd:
-		node bin/runGcd.js
+		node bin/brain-gcd.js
 
 brain-progression:
-		node bin/runProgression.js
+		node bin/brain-progression.js
 
 brain-prime:
-		node bin/runPrime.js
+		node bin/brain-prime.js
 
 publish:
 		npm publish --dry-run
