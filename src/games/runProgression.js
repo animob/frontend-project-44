@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import getRangeRandomNumber, { roundsCount } from '../../bin/utils.js';
-import runGame from '../common.js';
+import getRangeRandomNumber from '../utils.js';
+import runGame, { roundsCount } from '../common.js';
 
 const createProgression = (numArrLength) => {
   const numeros = [];
