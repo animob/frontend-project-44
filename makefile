@@ -27,5 +27,4 @@ publish:
 lint:
 		npx eslint .
 
-start:
-		node src/index.js
+start: brain-even brain-calc brain-gcd brain-progression brain-prime
