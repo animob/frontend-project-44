@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../utils.js';
-import runGame, { roundsCount } from '../common.js';
+import runGame, { roundsCount } from '../index.js';
 
 const mathCalculator = (num1, num2, randomSign, name) => {
   let result = 0;

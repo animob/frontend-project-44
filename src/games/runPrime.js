@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import runGame, { analyzeOneNumber } from '../common.js';
+import runGame, { roundsCount } from '../index.js';
+import analyzeOneNumber from '../common.js';
 
 const commonIsPrimeLogic = (num) => {
   let isPrime = true;
@@ -24,7 +25,7 @@ const commonIsPrimeLogic = (num) => {
 function runBrainPrime() {
   const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const questionAnswerArr = analyzeOneNumber(commonIsPrimeLogic);
+  const questionAnswerArr = analyzeOneNumber(commonIsPrimeLogic, roundsCount);
 
   runGame(textTask, questionAnswerArr);
 }
