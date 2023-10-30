@@ -2,7 +2,7 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
-const mathCalculator = (num1, num2, randomSign, name) => {
+const calculate = (num1, num2, randomSign, name) => {
   let result = 0;
 
   switch (randomSign) {
@@ -36,7 +36,7 @@ function runBrainCalc() {
     const randomSign = signs[randomIndex];
 
     questionAnswerArr[0].push(`${num1} ${randomSign} ${num2}`);
-    const correctAnswer = mathCalculator(num1, num2, randomSign);
+    const correctAnswer = calculate(num1, num2, randomSign);
     questionAnswerArr[1].push(correctAnswer);
   }
 

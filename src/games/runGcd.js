@@ -2,7 +2,7 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
-const commonDivisorLogic = (num1, num2) => {
+const runDivisorLogic = (num1, num2) => {
   let commonDivisor = 1;
   let result = 1;
 
@@ -26,7 +26,7 @@ function runBrainGcd() {
     const num2 = getRangeRandomNumber(0, 100);
 
     questionAnswerArr[0].push(`${num1} ${num2}`);
-    const correctAnswer = commonDivisorLogic(num1, num2);
+    const correctAnswer = runDivisorLogic(num1, num2);
     questionAnswerArr[1].push(correctAnswer);
   }
 

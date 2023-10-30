@@ -2,7 +2,7 @@
 import runGame, { roundsCount } from '../index.js';
 import analyzeOneNumber from '../common.js';
 
-const commonEvenLogic = (num) => {
+const runEvenLogic = (num) => {
   let correctAnswer = '';
 
   if (num % 2 === 0) {
@@ -17,7 +17,7 @@ const commonEvenLogic = (num) => {
 function runBrainEven() {
   const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const questionAnswerArr = analyzeOneNumber(commonEvenLogic, roundsCount);
+  const questionAnswerArr = analyzeOneNumber(runEvenLogic, roundsCount);
 
   runGame(textTask, questionAnswerArr);
 }

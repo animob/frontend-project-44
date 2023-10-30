@@ -2,7 +2,7 @@
 import runGame, { roundsCount } from '../index.js';
 import analyzeOneNumber from '../common.js';
 
-const commonIsPrimeLogic = (num) => {
+const runIsPrimeLogic = (num) => {
   let isPrime = true;
   let correctAnswer = '';
 
@@ -25,7 +25,7 @@ const commonIsPrimeLogic = (num) => {
 function runBrainPrime() {
   const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const questionAnswerArr = analyzeOneNumber(commonIsPrimeLogic, roundsCount);
+  const questionAnswerArr = analyzeOneNumber(runIsPrimeLogic, roundsCount);
 
   runGame(textTask, questionAnswerArr);
 }
