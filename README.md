@@ -13,7 +13,7 @@ There are 5 console games here.
 * `Brain Prime` - answer, whether this number is prime
 
 ## Requirements
-Minimum required nodejs 12.x
+Minimum required nodejs 13.2.0
 
 ## Download
 Open a terminal and 
