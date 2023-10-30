@@ -2,6 +2,8 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
+const textTask = 'What number is missing in the progression?';
+
 const createProgression = (numArrLength) => {
   const numeros = [];
   const numStart = getRangeRandomNumber(0, 100);
@@ -14,8 +16,21 @@ const createProgression = (numArrLength) => {
   return numeros;
 };
 
+const getRound = () => {
+  const numArrLength = 10;
+  const numIndexX = getRangeRandomNumber(0, numArrLength - 1);
+
+  const numerosArr = createProgression(numArrLength);
+  const answer = numerosArr[numIndexX];
+  numerosArr[numIndexX] = '..';
+
+  const separator = ' ';
+  const question = numerosArr.join(separator);
+
+  return [question, answer];
+};
+
 function runBrainProgression() {
-  const textTask = 'What number is missing in the progression?';
   const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {

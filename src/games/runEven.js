@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 import analyzeOneNumber from '../common.js';
+
+const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const runEvenLogic = (num) => {
   let correctAnswer = '';
@@ -14,9 +17,14 @@ const runEvenLogic = (num) => {
   return correctAnswer;
 };
 
-function runBrainEven() {
-  const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+const getRound = () => {
+  const num = getRangeRandomNumber(0, 100);
+  const question = `${num}`;
+  const answer = runEvenLogic(num);
+  return [question, answer];
+};
 
+function runBrainEven() {
   const questionAnswerArr = analyzeOneNumber(runEvenLogic, roundsCount);
 
   runGame(textTask, questionAnswerArr);

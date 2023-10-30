@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 import analyzeOneNumber from '../common.js';
+
+const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const runIsPrimeLogic = (num) => {
   let isPrime = true;
@@ -22,9 +25,14 @@ const runIsPrimeLogic = (num) => {
   return correctAnswer;
 };
 
-function runBrainPrime() {
-  const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const getRound = () => {
+  const num = getRangeRandomNumber(0, 100);
+  const question = `${num}`;
+  const answer = runIsPrimeLogic(num);
+  return [question, answer];
+};
 
+function runBrainPrime() {
   const questionAnswerArr = analyzeOneNumber(runIsPrimeLogic, roundsCount);
 
   runGame(textTask, questionAnswerArr);

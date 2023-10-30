@@ -2,6 +2,8 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
+const textTask = 'Find the greatest common divisor of given numbers.';
+
 const runDivisorLogic = (num1, num2) => {
   let commonDivisor = 1;
   let result = 1;
@@ -16,8 +18,15 @@ const runDivisorLogic = (num1, num2) => {
   return result;
 };
 
+const getRound = () => {
+  const num1 = getRangeRandomNumber(0, 100);
+  const num2 = getRangeRandomNumber(0, 100);
+  const question = `${num1} ${num2}`;
+  const answer = runDivisorLogic(num1, num2);
+  return [question, answer];
+};
+
 function runBrainGcd() {
-  const textTask = 'Find the greatest common divisor of given numbers.';
   const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {

@@ -2,6 +2,9 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
+const signs = ['+', '-', '*'];
+const textTask = 'What is the result of the expression?';
+
 const calculate = (num1, num2, randomSign) => {
   switch (randomSign) {
     case '+':
@@ -15,8 +18,17 @@ const calculate = (num1, num2, randomSign) => {
   }
 };
 
+const getRound = () => {
+  const num1 = getRangeRandomNumber(0, 100);
+  const num2 = getRangeRandomNumber(0, 100);
+  const index = getRangeRandomNumber(0, signs.length - 1);
+  const sign = signs[index];
+  const question = `${num1} ${sign} ${num2}`;
+  const answer = calculate(num1, num2, sign);
+  return [question, answer];
+};
+
 function runBrainCalc() {
-  const textTask = 'What is the result of the expression?';
   const questionAnswerArr = [[], []];
 
   for (let i = 0; i < roundsCount; i += 1) {
@@ -24,7 +36,6 @@ function runBrainCalc() {
     const num2 = getRangeRandomNumber(0, 100);
 
     // Create random sign for calculator
-    const signs = ['+', '-', '*'];
     const randomIndex = Math.round(Math.random() * (signs.length - 1));
     const randomSign = signs[randomIndex];
 
