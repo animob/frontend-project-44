@@ -2,24 +2,17 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
-const calculate = (num1, num2, randomSign, name) => {
-  let result = 0;
-
+const calculate = (num1, num2, randomSign) => {
   switch (randomSign) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
-      console.log(`Let's try again, ${name}!`);
+      return 'Something wrong with the game. Please, choose another game!';
   }
-
-  return result;
 };
 
 function runBrainCalc() {
