@@ -2,7 +2,7 @@
 import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
-const textTask = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
 const createProgression = (numArrLength) => {
   const numeros = [];
@@ -48,7 +48,7 @@ function runBrainProgression() {
     questionAnswerArr[1].push(correctAnswer);
   }
 
-  runGame(textTask, questionAnswerArr);
+  runGame(task, questionAnswerArr);
 }
 
 export default runBrainProgression;

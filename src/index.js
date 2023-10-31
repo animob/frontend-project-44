@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 
 const roundsCount = 3;
 
-const runGame = (textTask, questionAnswerArr) => {
+const runGame = (task, questionAnswerArr) => {
   let correctAnswers = 0;
 
   // greet
@@ -11,7 +11,7 @@ const runGame = (textTask, questionAnswerArr) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  console.log(textTask);
+  console.log(task);
 
   let i = 0;
   while (correctAnswers < roundsCount && i < roundsCount) {

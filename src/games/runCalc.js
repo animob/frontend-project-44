@@ -3,7 +3,7 @@ import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 
 const signs = ['+', '-', '*'];
-const textTask = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
 const calculate = (num1, num2, randomSign) => {
   switch (randomSign) {
@@ -44,7 +44,7 @@ function runBrainCalc() {
     questionAnswerArr[1].push(correctAnswer);
   }
 
-  runGame(textTask, questionAnswerArr);
+  runGame(task, questionAnswerArr);
 }
 
 export default runBrainCalc;

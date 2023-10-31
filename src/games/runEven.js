@@ -3,7 +3,7 @@ import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 import analyzeOneNumber from '../common.js';
 
-const textTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const runEvenLogic = (num) => {
   let correctAnswer = '';
@@ -27,7 +27,7 @@ const getRound = () => {
 function runBrainEven() {
   const questionAnswerArr = analyzeOneNumber(runEvenLogic, roundsCount);
 
-  runGame(textTask, questionAnswerArr);
+  runGame(task, questionAnswerArr);
 }
 
 export default runBrainEven;

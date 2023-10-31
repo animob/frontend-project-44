@@ -3,7 +3,7 @@ import getRangeRandomNumber from '../utils.js';
 import runGame, { roundsCount } from '../index.js';
 import analyzeOneNumber from '../common.js';
 
-const textTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const runIsPrimeLogic = (num) => {
   let isPrime = true;
@@ -35,7 +35,7 @@ const getRound = () => {
 function runBrainPrime() {
   const questionAnswerArr = analyzeOneNumber(runIsPrimeLogic, roundsCount);
 
-  runGame(textTask, questionAnswerArr);
+  runGame(task, questionAnswerArr);
 }
 
 export default runBrainPrime;
