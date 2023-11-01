@@ -1,54 +1,36 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../utils.js';
-import runGame, { roundsCount } from '../index.js';
+import runGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
-const createProgression = (numArrLength) => {
-  const numeros = [];
-  const numStart = getRangeRandomNumber(0, 100);
-  const numProgression = getRangeRandomNumber(0, 10);
+const createProgression = (progressionLength) => {
+  const progression = [];
+  const progressionStart = getRangeRandomNumber(0, 100);
+  const progressionStep = getRangeRandomNumber(0, 10);
 
-  for (let i = 0; i < numArrLength; i += 1) {
-    numeros.push(numStart + numProgression * i);
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(progressionStart + progressionStep * i);
   }
 
-  return numeros;
+  return progression;
 };
 
 const getRound = () => {
-  const numArrLength = 10;
-  const numIndexX = getRangeRandomNumber(0, numArrLength - 1);
+  const progressionLength = 10;
+  const progressionIndexX = getRangeRandomNumber(0, progressionLength - 1);
 
-  const numerosArr = createProgression(numArrLength);
-  const answer = numerosArr[numIndexX];
-  numerosArr[numIndexX] = '..';
+  const progression = createProgression(progressionLength);
+  const answer = String(progression[progressionIndexX]);
+  progression[progressionIndexX] = '..';
 
-  const separator = ' ';
-  const question = numerosArr.join(separator);
+  const question = progression.join(' ');
 
   return [question, answer];
 };
 
 function runBrainProgression() {
-  const questionAnswerArr = [[], []];
-
-  for (let i = 0; i < roundsCount; i += 1) {
-    const numArrLength = 10;
-    const numIndexX = Math.round(Math.random() * (numArrLength - 1));
-
-    const numerosArr = createProgression(numArrLength);
-    const correctAnswer = numerosArr[numIndexX];
-    numerosArr[numIndexX] = '..';
-
-    const separator = ' ';
-    const numerosLine = numerosArr.join(separator);
-
-    questionAnswerArr[0].push(numerosLine);
-    questionAnswerArr[1].push(correctAnswer);
-  }
-
-  runGame(task, questionAnswerArr);
+  runGame(task, getRound);
 }
 
 export default runBrainProgression;

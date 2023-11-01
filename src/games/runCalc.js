@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import getRangeRandomNumber from '../utils.js';
-import runGame, { roundsCount } from '../index.js';
+import runGame from '../index.js';
 
 const signs = ['+', '-', '*'];
 const task = 'What is the result of the expression?';
@@ -29,22 +29,7 @@ const getRound = () => {
 };
 
 function runBrainCalc() {
-  const questionAnswerArr = [[], []];
-
-  for (let i = 0; i < roundsCount; i += 1) {
-    const num1 = getRangeRandomNumber(0, 100);
-    const num2 = getRangeRandomNumber(0, 100);
-
-    // Create random sign for calculator
-    const randomIndex = Math.round(Math.random() * (signs.length - 1));
-    const randomSign = signs[randomIndex];
-
-    questionAnswerArr[0].push(`${num1} ${randomSign} ${num2}`);
-    const correctAnswer = calculate(num1, num2, randomSign);
-    questionAnswerArr[1].push(correctAnswer);
-  }
-
-  runGame(task, questionAnswerArr);
+  runGame(task, getRound);
 }
 
 export default runBrainCalc;
