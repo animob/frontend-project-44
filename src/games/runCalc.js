@@ -24,7 +24,7 @@ const getRound = () => {
   const index = getRangeRandomNumber(0, signs.length - 1);
   const sign = signs[index];
   const question = `${num1} ${sign} ${num2}`;
-  const answer = calculate(num1, num2, sign);
+  const answer = String(calculate(num1, num2, sign));
   return [question, answer];
 };
 

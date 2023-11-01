@@ -22,7 +22,7 @@ const getRound = () => {
   const num1 = getRangeRandomNumber(0, 100);
   const num2 = getRangeRandomNumber(0, 100);
   const question = `${num1} ${num2}`;
-  const answer = runDivisorLogic(num1, num2);
+  const answer = String(runDivisorLogic(num1, num2));
   return [question, answer];
 };
 
