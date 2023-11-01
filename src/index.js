@@ -1,49 +1,35 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-const roundsCount = 3;
+export const roundsCount = 3;
 
-const runGame = (task, questionAnswerArr) => {
+const runGame = (task, getRound) => {
   let correctAnswers = 0;
 
-  // greet
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
   console.log(task);
 
-  let i = 0;
-  while (correctAnswers < roundsCount && i < roundsCount) {
-    console.log(`Question: ${questionAnswerArr[0][i]}`);
-    const correctAnswer = questionAnswerArr[1][i];
+  while (correctAnswers < roundsCount) {
+    const [question, correctAnswer] = getRound();
+    console.log(`Question: ${question}`);
 
-    // answer from user
-    const reply = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    // check answer
-    if (correctAnswer === Number(reply) || correctAnswer === reply) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${reply}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    if (correctAnswer !== userAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-    }
-
-    // increase correctAnswer counter
-    if (String(correctAnswer) === String(reply)) {
-      correctAnswers += 1;
-    } else {
       break;
     }
-    i += 1;
+    console.log('Correct!');
+    correctAnswers += 1;
   }
 
-  // finish task
-  if (correctAnswers === 3) {
+  if (correctAnswers === roundsCount) {
     console.log(`Congratulations, ${name}!`);
   }
 };
-
-export { roundsCount };
 
 export default runGame;
