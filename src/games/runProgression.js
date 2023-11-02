@@ -2,27 +2,27 @@ import getRangeRandomNumber from '../utils.js';
 import runGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
+const length = 10;
 
-const createProgression = (progressionLength, progressionStart, progressionStep) => {
+const createProgression = (start, step) => {
   const progression = [];
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(progressionStart + progressionStep * i);
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
 
   return progression;
 };
 
 const getRound = () => {
-  const progressionStart = getRangeRandomNumber(0, 100);
-  const progressionStep = getRangeRandomNumber(0, 10);
+  const start = getRangeRandomNumber(0, 100);
+  const step = getRangeRandomNumber(0, 10);
 
-  const progressionLength = 10;
-  const progressionIndexX = getRangeRandomNumber(0, progressionLength - 1);
+  const indexX = getRangeRandomNumber(0, length - 1);
 
-  const progression = createProgression(progressionLength, progressionStart, progressionStep);
-  const answer = String(progression[progressionIndexX]);
-  progression[progressionIndexX] = '..';
+  const progression = createProgression(start, step);
+  const answer = String(progression[indexX]);
+  progression[indexX] = '..';
 
   const question = progression.join(' ');
 
