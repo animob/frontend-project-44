@@ -4,8 +4,8 @@ import runGame from '../index.js';
 const signs = ['+', '-', '*'];
 const task = 'What is the result of the expression?';
 
-const calculate = (num1, num2, randomSign) => {
-  switch (randomSign) {
+const calculate = (num1, num2, sign) => {
+  switch (sign) {
     case '+':
       return num1 + num2;
     case '-':
@@ -13,7 +13,7 @@ const calculate = (num1, num2, randomSign) => {
     case '*':
       return num1 * num2;
     default:
-      throw new Error(`Error: "${randomSign}" not found in game.`);
+      throw new Error(`Error: "${sign}" not found in game.`);
   }
 };
 
