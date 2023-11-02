@@ -14,7 +14,7 @@ const calculate = (num1, num2, randomSign) => {
     case '*':
       return num1 * num2;
     default:
-      return 'Something wrong with the game. Please, choose another game!';
+      throw new Error(`Error: "${randomSign}" not found in game.`);
   }
 };
 
