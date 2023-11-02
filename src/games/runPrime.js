@@ -20,8 +20,8 @@ const getRound = () => {
   return [question, answer];
 };
 
-function runBrainPrime() {
+const runBrainPrime = () => {
   runGame(task, getRound);
-}
+};
 
 export default runBrainPrime;

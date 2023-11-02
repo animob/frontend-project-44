@@ -13,8 +13,8 @@ const getRound = () => {
   return [question, answer];
 };
 
-function runBrainEven() {
+const runBrainEven = () => {
   runGame(task, getRound);
-}
+};
 
 export default runBrainEven;

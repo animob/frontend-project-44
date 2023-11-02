@@ -28,8 +28,8 @@ const getRound = () => {
   return [question, answer];
 };
 
-function runBrainCalc() {
+const runBrainCalc = () => {
   runGame(task, getRound);
-}
+};
 
 export default runBrainCalc;

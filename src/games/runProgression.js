@@ -30,8 +30,8 @@ const getRound = () => {
   return [question, answer];
 };
 
-function runBrainProgression() {
+const runBrainProgression = () => {
   runGame(task, getRound);
-}
+};
 
 export default runBrainProgression;
